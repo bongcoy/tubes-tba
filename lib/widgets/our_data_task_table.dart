@@ -19,9 +19,7 @@ class OurDataTaskTable extends StatelessWidget {
             buildRow(["Bahasa", "Papua"])
           ],
         ),
-        const SizedBox(
-          height: mediumDistanceSize,
-        ),
+        const SizedBox(height: mediumDistanceSize),
         Table(
           columnWidths: const {
             1: FlexColumnWidth(columnWidthSize),
@@ -34,6 +32,27 @@ class OurDataTaskTable extends StatelessWidget {
             buildRow(["1301204499", "Muhammad Pascal Dewantara"]),
           ],
         ),
+        const SizedBox(height: mediumDistanceSize),
+        Container(
+          decoration: BoxDecoration(
+            border: Border.all(),
+          ),
+          padding: const EdgeInsets.all(paddingContainerSize),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Context Free Grammar:",
+                style: Theme.of(context).textTheme.titleSmall,
+              ),
+              const SizedBox(height: mediumDistanceSize),
+              const Text("G -> S P O"),
+              const Text("Subjek -> sa | ko | kitorang"),
+              const Text("Predikat -> makang | main | nae | mo"),
+              const Text("Objek -> bola | baso | motor"),
+            ],
+          ),
+        )
       ],
     );
   }

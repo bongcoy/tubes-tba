@@ -20,9 +20,3 @@ class DataTaskWidget extends StatelessWidget {
     );
   }
 }
-
-// TODO: Masukin Tulisan Grammar
-// G -> Subjek Predikat Objek
-// Subjek -> sa | ko | kitorang
-// Predikat -> makang | main | nae | mo
-// Objek -> bola | baso | motor
