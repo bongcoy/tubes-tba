@@ -12,8 +12,6 @@ class ResultUserWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     print("BUILD RESULT USER WIDGET");
     final InOutProvider inOutProv = Provider.of<InOutProvider>(context);
-    inOutProv.emptyInput();
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
