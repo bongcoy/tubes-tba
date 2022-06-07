@@ -16,6 +16,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    print("BUILD HOMESCREEN");
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -34,17 +35,11 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 children: const [
                   DataTaskWidget(),
-                  SizedBox(
-                    height: bigDistanceSize,
-                  ),
+                  SizedBox(height: bigDistanceSize),
                   InputUserWidget(),
-                  SizedBox(
-                    height: bigDistanceSize,
-                  ),
+                  SizedBox(height: bigDistanceSize),
                   ResultUserWidget(),
-                  SizedBox(
-                    height: bigDistanceSize,
-                  ),
+                  SizedBox(height: bigDistanceSize),
                 ],
               ),
             ),

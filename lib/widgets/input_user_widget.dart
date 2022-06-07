@@ -16,7 +16,8 @@ class _InputUserWidgetState extends State<InputUserWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final InOutProvider inOutProvider = Provider.of<InOutProvider>(context);
+    print("BUILD INPUT USER WIDGET");
+    final InOutProvider inOutProv = Provider.of<InOutProvider>(context,listen: false);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,7 +32,7 @@ class _InputUserWidgetState extends State<InputUserWidget> {
         Center(
           child: ElevatedButton(
             onPressed: () {
-              inOutProvider.inputUser = _inputController.text.toString();
+              inOutProv.setResult(_inputController.text.toString());
             },
             child: const Text(buttonResultText),
           ),

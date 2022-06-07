@@ -4,12 +4,10 @@ class InOutProvider with ChangeNotifier {
   String? inputUser;
   bool? result;
 
-  void getResult(){
+  void setResult(String input){
+    inputUser = input;
     result = true;
     notifyListeners();
   }
 
-  void setInput(){
-
-  }
 }

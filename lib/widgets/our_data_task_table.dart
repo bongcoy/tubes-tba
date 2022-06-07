@@ -6,6 +6,7 @@ class OurDataTaskTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("BUILD OUR DATA TASK TABLE");
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
