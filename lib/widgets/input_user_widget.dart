@@ -15,6 +15,12 @@ class _InputUserWidgetState extends State<InputUserWidget> {
   final TextEditingController _inputController = TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+    _inputController.clear();
+  }
+
+  @override
   Widget build(BuildContext context) {
     print("BUILD INPUT USER WIDGET");
     final InOutProvider inOutProv = Provider.of<InOutProvider>(context,listen: false);

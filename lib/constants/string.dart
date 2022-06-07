@@ -8,3 +8,8 @@ const String outputResultText =
 
 // Button
 const String buttonResultText = "Gaskeun !";
+
+// Message
+const String noInputText = "Input masih kosong";
+const String noOutputText = "Output tidak dapat diproses";
+

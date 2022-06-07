@@ -12,6 +12,7 @@ class ResultUserWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     print("BUILD RESULT USER WIDGET");
     final InOutProvider inOutProv = Provider.of<InOutProvider>(context);
+    inOutProv.emptyInput();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,9 +26,14 @@ class ResultUserWidget extends StatelessWidget {
           ),
           alignment: Alignment.center,
           padding: const EdgeInsets.all(paddingContainerSize),
-          child: Text(
-            inOutProv.inputUser ?? "null",
-          ),
+          child: inOutProv.inputUser == null
+              ? const Text(
+                  noInputText,
+                  style: TextStyle(
+                    color: Colors.redAccent,
+                  ),
+                )
+              : Text(inOutProv.inputUser!),
         ),
         const SizedBox(height: mediumDistanceSize),
         const Text(outputResultText),
@@ -39,9 +45,16 @@ class ResultUserWidget extends StatelessWidget {
           ),
           alignment: Alignment.center,
           padding: const EdgeInsets.all(paddingContainerSize),
-          child: Text(
-            inOutProv.result == null ? "null" : inOutProv.result.toString(),
-          ),
+          child: inOutProv.result == null
+              ? const Text(
+                  noOutputText,
+                  style: TextStyle(
+                    color: Colors.redAccent,
+                  ),
+                )
+              : Text(
+                  inOutProv.result.toString(),
+                ),
         ),
       ],
     );

@@ -10,4 +10,10 @@ class InOutProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  void emptyInput(){
+    inputUser = null;
+    result = null;
+    notifyListeners();
+  }
+
 }
