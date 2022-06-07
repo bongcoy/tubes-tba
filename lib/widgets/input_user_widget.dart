@@ -39,6 +39,7 @@ class _InputUserWidgetState extends State<InputUserWidget> {
           child: ElevatedButton(
             onPressed: () {
               inOutProv.setResult(_inputController.text.toString());
+              _inputController.clear();
             },
             child: const Text(buttonResultText),
           ),
