@@ -7,7 +7,7 @@ const String outputResultText =
     "Berdasarkan Lexical Analyzer, kata yang kamu inputkan menghasilkan :";
 
 // Button
-const String buttonResultText = "Gaskeun !";
+const String buttonResultText = "Gaskeun!";
 
 // Message
 const String noInputText = "Input masih kosong";
