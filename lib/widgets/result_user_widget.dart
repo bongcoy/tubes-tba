@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tubes_tba/providers/in_out_provider.dart';
+import 'package:tubes_tba/widgets/result_tile.dart';
 
 import '../constants/size.dart';
 import '../constants/string.dart';
@@ -56,7 +57,17 @@ class ResultUserWidget extends StatelessWidget {
                   child: ListView.builder(
                     itemCount: inOutProv.separatedResultWord.length,
                     itemBuilder: (ctx, index) {
-                      return Text(inOutProv.separatedResultWord[index].toString());
+                      String _word = "";
+                      bool _result= false;
+                      inOutProv.separatedResultWord[index].map((key, value) {
+                        _word = key;
+                        _result = value;
+                        return MapEntry(_word, _result);
+                      });
+                      return ResultTile(
+                        title: _word,
+                        result: _result,
+                      );
                     },
                   ),
                 ),
