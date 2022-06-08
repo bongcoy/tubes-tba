@@ -31,9 +31,6 @@ class InOutProvider with ChangeNotifier {
     for (Transition trans in FiniteAutomata().transitionList){
       if (trans.currentState == currentState && trans.currentSymbol == currentSymbol){
         return trans;
-      }else{
-        // print("State saat ini: ${currentState}, Symbol saat ini: ${currentSymbol}");
-        // print("${trans.currentState}, ${trans.currentSymbol}, ${trans.nextState}");
       }
     }
     return null;
@@ -52,8 +49,6 @@ class InOutProvider with ChangeNotifier {
       if (currentTransition != null){
         state = currentTransition.nextState;
 
-        // print("CHAR SAAT INI ${charList[idxChar]},");
-        // print("isAccept = ${_checkIsAccepting(state)}, isLast = ${charList[idxChar] != "#"}");
         if (_checkIsAccepting(state)){
           print("Kata saat ini: '$currentWord' adalah VALID");
           separatedResultWord.add({currentWord: true});
