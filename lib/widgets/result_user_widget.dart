@@ -33,7 +33,9 @@ class ResultUserWidget extends StatelessWidget {
                     color: Colors.redAccent,
                   ),
                 )
-              : Text(inOutProv.inputUser!),
+              : SelectableText(
+                  inOutProv.inputUser!,
+                ),
         ),
         const SizedBox(height: mediumDistanceSize),
         const Text(outputResultText),
@@ -53,7 +55,7 @@ class ResultUserWidget extends StatelessWidget {
                   ),
                 )
               : SizedBox(
-                  height: 200,
+                  height: 216,
                   child: ListView.builder(
                     itemCount: inOutProv.separatedResultWord.length,
                     itemBuilder: (ctx, index) {

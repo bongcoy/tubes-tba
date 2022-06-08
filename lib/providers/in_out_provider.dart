@@ -54,8 +54,14 @@ class InOutProvider with ChangeNotifier {
           separatedResultWord.add({currentWord: true});
           currentWord = "";
         }
-      }else{
-        if (charList[idxChar+1] == "#"){
+      }
+
+      if (idxChar == charList.length-2){
+        if (_checkIsAccepting(state)){
+          print("Kata saat ini: '$currentWord' adalah VALID");
+          separatedResultWord.add({currentWord: true});
+          currentWord = "";
+        }else{
           separatedResultWord.add({currentWord: false});
           currentWord = "";
         }
