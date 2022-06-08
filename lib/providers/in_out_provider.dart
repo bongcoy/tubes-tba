@@ -13,7 +13,7 @@ class InOutProvider with ChangeNotifier {
   }
 
   void emptyInput(){
-    if (inputUser != null && result != null){
+    if ((inputUser != "" || inputUser != null) && result != null){
       inputUser = null;
       result = null;
       notifyListeners();

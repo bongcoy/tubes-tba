@@ -24,7 +24,7 @@ class ResultUserWidget extends StatelessWidget {
           ),
           alignment: Alignment.center,
           padding: const EdgeInsets.all(paddingContainerSize),
-          child: inOutProv.inputUser == null
+          child: (inOutProv.inputUser == "" || inOutProv.inputUser == null)
               ? const Text(
                   noInputText,
                   style: TextStyle(
