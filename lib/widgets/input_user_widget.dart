@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tubes_tba/constants/size.dart';
 import 'package:tubes_tba/providers/in_out_provider.dart';
 
 import '../constants/string.dart';
@@ -35,6 +36,7 @@ class _InputUserWidgetState extends State<InputUserWidget> {
             hintText: "Contoh: Nae, Main, Ko, Kitorang",
           ),
         ),
+        const SizedBox(height: smallDistanceSize),
         Center(
           child: ElevatedButton(
             onPressed: () {
