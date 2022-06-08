@@ -52,7 +52,7 @@ class InOutProvider with ChangeNotifier {
           if (state == FAState.q11 && charList[idxChar+1] == "t"){ // kondisi khusus (karena ada final state di tengah)
             state = FAState.q20;
           }else{
-            print("Kata saat ini: '$currentWord' adalah VALID");
+            // print("Kata saat ini: '$currentWord' adalah VALID");
             separatedResultWord.add({currentWord: true});
             state = FAState.q0;
             currentWord = "";
@@ -62,7 +62,7 @@ class InOutProvider with ChangeNotifier {
         }
 
       }else{
-        print("State = $state, CurrChar = ${charList[idxChar]}, CurrWord = $currentWord");
+        // print("State = $state, CurrChar = ${charList[idxChar]}, CurrWord = $currentWord");
         // currentTransition = _searchTransition(state, charList[idxChar]);
 
         if (idxChar <= charList.length-2){
@@ -73,7 +73,7 @@ class InOutProvider with ChangeNotifier {
       idxChar++;
     }
 
-    print("Hasil: $separatedResultWord");
+    // print("Hasil: $separatedResultWord");
   }
 
   void _lexicalAnalyzer(){
@@ -84,7 +84,7 @@ class InOutProvider with ChangeNotifier {
         _lexicalProcess(charList);
       }
     }catch (err) {
-      print(err);
+      // print(err);
       rethrow;
     }
 
