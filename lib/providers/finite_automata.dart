@@ -6,6 +6,14 @@ class FiniteAutomata with ChangeNotifier {
   // List<FAState> stateList = FAState.values;
   final List<Transition> _transitionList = [];
 
+  List<FAState> get acceptingState {
+    return [
+      FAState.q2,
+      FAState.q3,
+      FAState.q20,
+    ];
+  }
+
   List<Transition> get transitionList {
     addTransition(FAState.q0, " ", FAState.q0);
     addTransition(FAState.q2, " ", FAState.q2);
@@ -51,8 +59,8 @@ class FiniteAutomata with ChangeNotifier {
     return _transitionList;
   }
 
-  void addTransition(FAState currentState, String currentSymbol, FAState nextState){
+  void addTransition(
+      FAState currentState, String currentSymbol, FAState nextState) {
     _transitionList.add(Transition(currentState, currentSymbol, nextState));
   }
-
 }

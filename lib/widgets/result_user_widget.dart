@@ -12,6 +12,7 @@ class ResultUserWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     print("BUILD RESULT USER WIDGET");
     final InOutProvider inOutProv = Provider.of<InOutProvider>(context);
+    inOutProv.emptyInput();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -24,7 +25,7 @@ class ResultUserWidget extends StatelessWidget {
           ),
           alignment: Alignment.center,
           padding: const EdgeInsets.all(paddingContainerSize),
-          child: (inOutProv.inputUser == "" || inOutProv.inputUser == null)
+          child: inOutProv.inputUser == null
               ? const Text(
                   noInputText,
                   style: TextStyle(
@@ -43,15 +44,21 @@ class ResultUserWidget extends StatelessWidget {
           ),
           alignment: Alignment.center,
           padding: const EdgeInsets.all(paddingContainerSize),
-          child: inOutProv.result == null
+          child: inOutProv.separatedResultWord.isEmpty
               ? const Text(
                   noOutputText,
                   style: TextStyle(
                     color: Colors.redAccent,
                   ),
                 )
-              : Text(
-                  inOutProv.result.toString(),
+              : SizedBox(
+                  height: 200,
+                  child: ListView.builder(
+                    itemCount: inOutProv.separatedResultWord.length,
+                    itemBuilder: (ctx, index) {
+                      return Text(inOutProv.separatedResultWord[index].toString());
+                    },
+                  ),
                 ),
         ),
       ],
