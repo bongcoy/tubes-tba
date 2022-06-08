@@ -47,23 +47,26 @@ class InOutProvider with ChangeNotifier {
       currentWord += charList[idxChar];
 
       if (currentTransition != null){
-        state = currentTransition.nextState;
 
-        if (_checkIsAccepting(state)){
-          print("Kata saat ini: '$currentWord' adalah VALID");
-          separatedResultWord.add({currentWord: true});
-          currentWord = "";
-        }
-      }
-
-      if (idxChar == charList.length-2){
-        if (_checkIsAccepting(state)){
-          print("Kata saat ini: '$currentWord' adalah VALID");
-          separatedResultWord.add({currentWord: true});
-          currentWord = "";
+        if (_checkIsAccepting(currentTransition.nextState)){
+          if (state == FAState.q11 && charList[idxChar+1] == "t"){ // kondisi khusus (karena ada final state di tengah)
+            state = FAState.q20;
+          }else{
+            print("Kata saat ini: '$currentWord' adalah VALID");
+            separatedResultWord.add({currentWord: true});
+            state = FAState.q0;
+            currentWord = "";
+          }
         }else{
+          state = currentTransition.nextState;
+        }
+
+      }else{
+        print("State = $state, CurrChar = ${charList[idxChar]}, CurrWord = $currentWord");
+        // currentTransition = _searchTransition(state, charList[idxChar]);
+
+        if (idxChar <= charList.length-2){
           separatedResultWord.add({currentWord: false});
-          currentWord = "";
         }
       }
 

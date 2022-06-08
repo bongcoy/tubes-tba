@@ -34,7 +34,7 @@ class _InputUserWidgetState extends State<InputUserWidget> {
         TextFormField(
           controller: _inputController,
           decoration: const InputDecoration(
-            hintText: "Contoh: Nae, Main, Ko, Kitorang",
+            hintText: hintExampleText,
           ),
         ),
         const SizedBox(height: smallDistanceSize),
