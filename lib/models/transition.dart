@@ -1,4 +1,5 @@
 enum FAState {
+  q0,
   q1,
   q2,
   q3,
@@ -15,6 +16,12 @@ enum FAState {
   q14,
   q15,
   q16,
+  q17,
+  q18,
+  q19,
+  q20,
+  q21,
+  q22,
 }
 
 class Transition {
