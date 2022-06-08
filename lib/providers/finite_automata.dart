@@ -48,7 +48,7 @@ class FiniteAutomata with ChangeNotifier {
     addTransition(FAState.q21, "o", FAState.q22);
     addTransition(FAState.q22, "r", FAState.q2);
 
-    return [];
+    return _transitionList;
   }
 
   void addTransition(FAState currentState, String currentSymbol, FAState nextState){

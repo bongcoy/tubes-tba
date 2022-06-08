@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tubes_tba/providers/finite_automata.dart';
 
 class InOutProvider with ChangeNotifier {
   String? inputUser;
@@ -7,6 +8,7 @@ class InOutProvider with ChangeNotifier {
   void setResult(String input){
     inputUser = input;
     result = true;
+    print(FiniteAutomata().transitionList.length);
     notifyListeners();
   }
 
