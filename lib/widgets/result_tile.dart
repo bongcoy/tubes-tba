@@ -19,7 +19,7 @@ class ResultTile extends StatelessWidget {
               Icons.clear,
               color: Colors.red,
             ),
-      title: Text(title),
+      title: Text('"$title"'),
       trailing: Text(result.toString()),
     );
   }

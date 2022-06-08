@@ -24,7 +24,8 @@ class _InputUserWidgetState extends State<InputUserWidget> {
   @override
   Widget build(BuildContext context) {
     print("BUILD INPUT USER WIDGET");
-    final InOutProvider inOutProv = Provider.of<InOutProvider>(context,listen: false);
+    final InOutProvider inOutProv =
+        Provider.of<InOutProvider>(context, listen: false);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,6 +42,27 @@ class _InputUserWidgetState extends State<InputUserWidget> {
           child: ElevatedButton(
             onPressed: () {
               inOutProv.setResult(_inputController.text.toString());
+
+              if (_inputController.text != "") {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                      content: const Text(addSuccesText),
+                      action: SnackBarAction(
+                        label: okText,
+                        onPressed: (){},
+                      )),
+                );
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                      content: const Text(deleteSuccesText),
+                      action: SnackBarAction(
+                        label: okText,
+                        onPressed: (){},
+                      )),
+                );
+              }
+
               _inputController.clear();
             },
             child: const Text(buttonResultText),

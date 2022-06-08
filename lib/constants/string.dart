@@ -9,6 +9,9 @@ const String outputResultText = "Berdasarkan Lexical Analyzer, kata yang kamu in
 const String buttonResultText = "Gaskeun!";
 
 // Message
+const String okText = "Oke";
 const String noInputText = "Input masih kosong";
 const String noOutputText = "Output tidak dapat diproses";
+const String addSuccesText = "Berhasil ditambahkan";
+const String deleteSuccesText = "Berhasil dihapus";
 

@@ -57,16 +57,16 @@ class ResultUserWidget extends StatelessWidget {
                   child: ListView.builder(
                     itemCount: inOutProv.separatedResultWord.length,
                     itemBuilder: (ctx, index) {
-                      String _word = "";
-                      bool _result= false;
+                      String word = "";
+                      bool result = false;
                       inOutProv.separatedResultWord[index].map((key, value) {
-                        _word = key;
-                        _result = value;
-                        return MapEntry(_word, _result);
+                        word = key;
+                        result = value;
+                        return MapEntry(word, result);
                       });
                       return ResultTile(
-                        title: _word,
-                        result: _result,
+                        title: word,
+                        result: result,
                       );
                     },
                   ),
