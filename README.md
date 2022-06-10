@@ -7,5 +7,5 @@ Program Lexical Analyzer dan Parser
 - 1301204269 - Imam Rifai Kadir Sibali
 - 1301204499 - Muhammad Pascal Dewantara
 
-Dapat diakses pada situs :
+Menggunakan _static page_ pada platform CodeMagic, dapat diakses pada situs :
 > https://tubes-tba-4407-05.codemagic.app/#/
