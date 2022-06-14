@@ -34,7 +34,7 @@ class AcceptedSentenceBox extends StatelessWidget {
                   ),
                 )
               : SelectableText(
-                  inOutProv.acceptedSentence!,
+                  inOutProv.acceptedSentence!.join(" "),
                 ),
     );
   }
