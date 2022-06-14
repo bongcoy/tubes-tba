@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tubes_tba/widgets/result_tile.dart';
 
-import '../constants/size.dart';
-import '../constants/string.dart';
-import '../providers/in_out_provider.dart';
+import '../../constants/size.dart';
+import '../../constants/string.dart';
+import '../../providers/in_out_provider.dart';
 
 class HistoryBox extends StatelessWidget {
   const HistoryBox({Key? key}) : super(key: key);
