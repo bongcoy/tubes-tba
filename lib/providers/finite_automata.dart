@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
-
 import '../models/transition.dart';
 
-class FiniteAutomata with ChangeNotifier {
+class FiniteAutomata {
   // List<FAState> stateList = FAState.values;
   final List<Transition> _transitionList = [];
 
