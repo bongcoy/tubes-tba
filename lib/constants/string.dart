@@ -5,6 +5,7 @@ const String resultText = "Hasil :";
 const String inputResultText = "Input kamu adalah :";
 const String outputResultText = "Berdasarkan Lexical Analyzer, kata yang kamu inputkan menghasilkan :";
 const String acceptedResultText = "Kalimat yang dapat diterima adalah :";
+const String grammarResultText = "Hasil grammar kamu :";
 
 // Button
 const String buttonResultText = "Gaskeun!";
