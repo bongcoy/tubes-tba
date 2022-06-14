@@ -6,10 +6,12 @@ class InOutProvider with ChangeNotifier {
   String? inputUser;
   String? processedInput;
   List<Map<String,bool>> separatedResultWord = [];
+  String? acceptedSentence;
 
   void setResult(String input){
     inputUser = input == "" ? null : input;
     processedInput = inputUser == null ? null : "${inputUser!.toLowerCase()}#";
+    acceptedSentence = "";
 
     _lexicalAnalyzer();
 
@@ -20,6 +22,7 @@ class InOutProvider with ChangeNotifier {
     if (inputUser == null && separatedResultWord.isNotEmpty){
       inputUser = null;
       separatedResultWord.clear();
+      acceptedSentence = null;
     }
   }
 
@@ -54,6 +57,7 @@ class InOutProvider with ChangeNotifier {
           }else{
             // debugPrint("Kata saat ini: '$currentWord' adalah VALID");
             separatedResultWord.add({currentWord: true});
+            acceptedSentence = acceptedSentence! + currentWord;
             state = FAState.q0;
             currentWord = "";
           }

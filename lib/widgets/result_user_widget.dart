@@ -13,9 +13,9 @@ class ResultUserWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("BUILD RESULT USER WIDGET");
     final InOutProvider inOutProv = Provider.of<InOutProvider>(context,listen: false);
     inOutProv.emptyInput();
+    print("BUILD RESULT USER WIDGET");
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,7 +30,7 @@ class ResultUserWidget extends StatelessWidget {
         HistoryBox(),
         SizedBox(height: mediumDistanceSize),
 
-        Text(outputResultText),
+        Text(acceptedResultText),
         SizedBox(height: smallDistanceSize),
         AcceptedSentenceBox(),
         SizedBox(height: mediumDistanceSize),
