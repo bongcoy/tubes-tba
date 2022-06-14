@@ -57,7 +57,7 @@ class InOutProvider with ChangeNotifier {
           }else{
             // debugPrint("Kata saat ini: '$currentWord' adalah VALID");
             separatedResultWord.add({currentWord: true});
-            acceptedSentence?.addAll(currentWord.split(" "));
+            acceptedSentence?.add(currentWord.trim());
             state = FAState.q0;
             currentWord = "";
           }
