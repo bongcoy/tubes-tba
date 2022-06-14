@@ -7,13 +7,19 @@ class InOutProvider with ChangeNotifier {
   String? processedInput;
   List<Map<String,bool>> separatedResultWord = [];
   List<String>? acceptedSentence;
+  List<String> stack = [];
+  bool? grammarResult;
 
   void setResult(String input){
     inputUser = input == "" ? null : input;
     processedInput = inputUser == null ? null : "${inputUser!.toLowerCase()}#";
     acceptedSentence = [];
 
+    stack.add("#");
+    stack.add("G");
+
     _lexicalAnalyzer();
+    _parser();
 
     notifyListeners();
   }
@@ -23,6 +29,7 @@ class InOutProvider with ChangeNotifier {
       inputUser = null;
       separatedResultWord.clear();
       acceptedSentence?.clear();
+      stack.clear();
     }
   }
 
@@ -84,9 +91,19 @@ class InOutProvider with ChangeNotifier {
         _lexicalProcess(charList);
       }
     }catch (err) {
-      // print(err);
       rethrow;
     }
+  }
 
+  void _parseProcess(){
+
+  }
+
+  void _parser(){
+    try {
+      _parseProcess();
+    }catch (err) {
+      rethrow;
+    }
   }
 }

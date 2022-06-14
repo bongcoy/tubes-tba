@@ -1,4 +1,6 @@
 class ParseTable {
+
+
   final List<String> nonTerminals = [
     "G",
     "S",
@@ -18,7 +20,6 @@ class ParseTable {
     "baso",
     "motor",
   ];
-
 
 
 }

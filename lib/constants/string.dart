@@ -16,6 +16,8 @@ const String hintExampleText = "Contoh: nAe, mAiN, Ko, Kitorang, tEst Hai, test 
 const String noInputText = "Input masih kosong";
 const String noOutputText = "Output tidak dapat diproses";
 const String noAcceptedText = "Tidak ada kata yang valid";
+const String acceptGrammarText = "Tidak ada kata yang valid";
+const String rejectGrammarText = "Tidak ada kata yang valid";
 const String addSuccesText = "Berhasil ditambahkan";
 const String deleteSuccesText = "Berhasil dihapus";
 

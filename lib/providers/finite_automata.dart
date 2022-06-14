@@ -12,6 +12,7 @@ class FiniteAutomata {
     ];
   }
 
+  // Pakai List (bukan pakai map tuple) karena dart tidak ada tuple
   List<Transition> get transitionList {
     _addTransition(FAState.q0, " ", FAState.q0);
     _addTransition(FAState.q2, " ", FAState.q2);
