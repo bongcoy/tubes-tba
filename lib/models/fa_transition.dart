@@ -24,10 +24,10 @@ enum FAState {
   q22,
 }
 
-class Transition {
+class FATransition {
   final FAState currentState;
   final String currentSymbol;
   final FAState nextState;
 
-  Transition(this.currentState, this.currentSymbol, this.nextState);
+  FATransition(this.currentState, this.currentSymbol, this.nextState);
 }

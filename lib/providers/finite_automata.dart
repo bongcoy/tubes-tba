@@ -1,8 +1,8 @@
-import '../models/transition.dart';
+import '../models/fa_transition.dart';
 
 class FiniteAutomata {
   // List<FAState> stateList = FAState.values;
-  final List<Transition> _transitionList = [];
+  final List<FATransition> _transitionList = [];
 
   List<FAState> get acceptingState {
     return [
@@ -13,7 +13,7 @@ class FiniteAutomata {
   }
 
   // Pakai List (bukan pakai map tuple) karena dart tidak ada tuple
-  List<Transition> get transitionList {
+  List<FATransition> get transitionList {
     _addTransition(FAState.q0, " ", FAState.q0);
     _addTransition(FAState.q2, " ", FAState.q2);
 
@@ -60,6 +60,6 @@ class FiniteAutomata {
 
   void _addTransition(
       FAState currentState, String currentSymbol, FAState nextState) {
-    _transitionList.add(Transition(currentState, currentSymbol, nextState));
+    _transitionList.add(FATransition(currentState, currentSymbol, nextState));
   }
 }

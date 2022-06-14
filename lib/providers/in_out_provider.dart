@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tubes_tba/models/transition.dart';
+import 'package:tubes_tba/models/fa_transition.dart';
 import 'package:tubes_tba/providers/finite_automata.dart';
 
 class InOutProvider with ChangeNotifier {
@@ -37,8 +37,8 @@ class InOutProvider with ChangeNotifier {
     return FiniteAutomata().acceptingState.contains(state);
   }
 
-  Transition? _searchTransition(FAState currentState, String currentSymbol){
-    for (Transition trans in FiniteAutomata().transitionList){
+  FATransition? _searchTransition(FAState currentState, String currentSymbol){
+    for (FATransition trans in FiniteAutomata().transitionList){
       if (trans.currentState == currentState && trans.currentSymbol == currentSymbol){
         return trans;
       }
@@ -48,7 +48,7 @@ class InOutProvider with ChangeNotifier {
 
   void _lexicalProcess(List<String> charList){
     FAState state = FAState.q0;
-    Transition? currentTransition;
+    FATransition? currentTransition;
     int idxChar = 0;
     String currentWord = "";
 
