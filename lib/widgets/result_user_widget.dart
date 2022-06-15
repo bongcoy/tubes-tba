@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:tubes_tba/providers/in_out_provider.dart';
 import 'package:tubes_tba/widgets/box/accepted_sentence_box.dart';
 import 'package:tubes_tba/widgets/box/grammar_result_box.dart';
 import 'package:tubes_tba/widgets/box/history_box.dart';
@@ -14,8 +12,8 @@ class ResultUserWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final InOutProvider inOutProv = Provider.of<InOutProvider>(context,listen: false);
-    inOutProv.emptyInput();
+    // final InOutProvider inOutProv = Provider.of<InOutProvider>(context,listen: false);
+    // inOutProv.emptyInput();
     debugPrint("BUILD RESULT USER WIDGET");
 
     return Column(

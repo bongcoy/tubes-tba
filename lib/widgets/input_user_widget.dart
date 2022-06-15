@@ -23,9 +23,7 @@ class _InputUserWidgetState extends State<InputUserWidget> {
 
   @override
   Widget build(BuildContext context) {
-    print("BUILD INPUT USER WIDGET");
-    final InOutProvider inOutProv =
-        Provider.of<InOutProvider>(context, listen: false);
+    debugPrint("BUILD INPUT USER WIDGET");
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,35 +36,72 @@ class _InputUserWidgetState extends State<InputUserWidget> {
           ),
         ),
         const SizedBox(height: smallDistanceSize),
-        Center(
-          child: ElevatedButton(
-            onPressed: () {
-              inOutProv.setResult(_inputController.text.toString());
+        Consumer<InOutProvider>(
+          builder: (context, value, _) {
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    value.setResult(_inputController.text.toString());
 
-              if (_inputController.text != "") {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                      content: const Text(addSuccesText),
-                      action: SnackBarAction(
-                        label: okText,
-                        onPressed: (){},
-                      )),
-                );
-              } else {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                      content: const Text(deleteSuccesText),
-                      action: SnackBarAction(
-                        label: okText,
-                        onPressed: (){},
-                      )),
-                );
-              }
+                    if (_inputController.text != "") {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                            content: const Text(addSuccesText),
+                            action: SnackBarAction(
+                              label: okText,
+                              onPressed: () {},
+                            )),
+                      );
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                            content: const Text(addFailText),
+                            action: SnackBarAction(
+                              label: okText,
+                              onPressed: () {},
+                            )),
+                      );
+                    }
+                  },
+                  child: const Text(buttonResultText),
+                ),
+                const SizedBox(width: smallDistanceSize,),
+                ElevatedButton(
+                  onPressed: () {
+                    if (value.processedInput != null) {
+                      value.emptyInput();
 
-              _inputController.clear();
-            },
-            child: const Text(buttonResultText),
-          ),
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                            content: const Text(deleteSuccesText),
+                            action: SnackBarAction(
+                              label: okText,
+                              onPressed: () {},
+                            )),
+                      );
+
+                      _inputController.clear();
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                            content: const Text(deleteFailText),
+                            action: SnackBarAction(
+                              label: okText,
+                              onPressed: () {},
+                            )),
+                      );
+                    }
+                  },
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.redAccent),
+                  ),
+                  child: const Icon(Icons.delete),
+                ),
+              ],
+            );
+          },
         )
       ],
     );
