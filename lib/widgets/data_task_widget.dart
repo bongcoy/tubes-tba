@@ -9,7 +9,7 @@ class DataTaskWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("BUILD DATA TASK WIDGET");
+    debugPrint("BUILD DATA TASK WIDGET");
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: const [

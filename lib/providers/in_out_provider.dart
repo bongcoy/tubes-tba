@@ -153,8 +153,6 @@ class InOutProvider with ChangeNotifier {
     }else{
       grammarResult = false;
     }
-
-    debugPrint("SINIII ParseProses");
   }
 
   void _parser() {

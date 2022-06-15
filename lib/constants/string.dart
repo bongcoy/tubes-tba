@@ -25,7 +25,7 @@ const String addFailText = "Tidak ada input";
 const String deleteSuccesText = "Berhasil dihapus";
 const String deleteFailText = "Tidak ada data";
 
-// List Bugs :
+// List Dummy :
 // aku kamu main
 // tEst Hai
 // test saya mo nae motor

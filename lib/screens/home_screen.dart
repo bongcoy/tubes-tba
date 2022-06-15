@@ -16,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    print("BUILD HOMESCREEN");
+    debugPrint("BUILD HOMESCREEN");
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(

@@ -1,7 +1,3 @@
-
-// Text
-// const double smallTextSize = 16;
-
 // Edge
 const double circularRoundSize = 4;
 
