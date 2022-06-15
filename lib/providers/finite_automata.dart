@@ -1,7 +1,6 @@
 import '../models/fa_transition.dart';
 
 class FiniteAutomata {
-  // List<FAState> stateList = FAState.values;
   final List<FATransition> _transitionList = [];
 
   List<FAState> get acceptingState {

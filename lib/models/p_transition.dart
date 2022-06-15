@@ -1,24 +1,7 @@
-enum NTerminal {
-  G, S, P, O
-}
-
-enum Terminal {
-  sa,
-  ko,
-  kitorang,
-  makang,
-  main,
-  nae,
-  mo,
-  bola,
-  baso,
-  motor,
-}
-
 class PTransition {
-  final NTerminal currNTerminal;
-  final Terminal currTerminal;
-  final List<dynamic> nextState;
+  final String currNTerminal;
+  final String currTerminal;
+  final List<String> nextSymbol;
 
-  PTransition(this.currNTerminal, this.currTerminal, this.nextState);
+  PTransition(this.currNTerminal, this.currTerminal, this.nextSymbol);
 }

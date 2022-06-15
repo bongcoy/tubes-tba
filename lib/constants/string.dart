@@ -18,7 +18,7 @@ const String noInputText = "Input masih kosong";
 const String noOutputText = "Output tidak dapat diproses";
 const String noAcceptedText = "Tidak ada kata yang valid";
 const String acceptGrammarText = "Kata valid";
-const String rejectGrammarText = "Tidak ada kata yang valid";
+const String rejectGrammarText = "Grammar kamu tidak valid";
 
 const String addSuccesText = "Berhasil ditambahkan";
 const String addFailText = "Tidak ada input";
