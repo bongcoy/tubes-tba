@@ -12,8 +12,6 @@ class ResultUserWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final InOutProvider inOutProv = Provider.of<InOutProvider>(context,listen: false);
-    // inOutProv.emptyInput();
     debugPrint("BUILD RESULT USER WIDGET");
 
     return Column(
