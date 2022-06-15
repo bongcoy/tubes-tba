@@ -43,9 +43,11 @@ class _InputUserWidgetState extends State<InputUserWidget> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    value.setResult(_inputController.text.toString());
-
                     if (_inputController.text != "") {
+                      value.emptyInput();
+                      value.setResult(_inputController.text.toString());
+                      _inputController.clear();
+
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                             content: const Text(addSuccesText),
@@ -54,6 +56,7 @@ class _InputUserWidgetState extends State<InputUserWidget> {
                               onPressed: () {},
                             )),
                       );
+
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
@@ -81,8 +84,6 @@ class _InputUserWidgetState extends State<InputUserWidget> {
                               onPressed: () {},
                             )),
                       );
-
-                      _inputController.clear();
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(

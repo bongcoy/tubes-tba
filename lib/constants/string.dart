@@ -12,7 +12,7 @@ const String buttonResultText = "Gaskeun!";
 
 // Message
 const String okText = "Oke";
-const String hintExampleText = "Contoh: nAe, mAiN, Ko, Kitorang, tEst Hai, test Mo";
+const String hintExampleText = "Contoh: nAe, Sa mo main, test mo tes saya";
 
 const String noInputText = "Input masih kosong";
 const String noOutputText = "Output tidak dapat diproses";
